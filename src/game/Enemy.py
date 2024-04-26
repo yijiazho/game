@@ -12,6 +12,7 @@ class Enemy:
         self.direction_y = random.choice([-1, 1])
         self.speed_x = 5
         self.speed_y = 2
+        self.health = 100
         self.direction_change_frequency = 1000
         self.last_direction_change = pygame.time.get_ticks()
 
@@ -52,3 +53,7 @@ class Enemy:
 
     def get_rect(self):
         return pygame.Rect(self.x, self.y, self.width, self.height)
+
+    def take_damage(self, damage):
+        self.health -= damage
+        return self.health <= 0 
