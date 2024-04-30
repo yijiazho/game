@@ -31,7 +31,7 @@ class Enemy:
         if self.y <= 0 or self.y >= 100:  # Restrict Y movement within top 100 pixels
             self.direction_y *= -1
 
-    def move(self, screen_width, current_time):
+    def move(self, screen_width, screen_height, current_time):
         # Time-based random direction change
         if current_time - self.last_direction_change > self.direction_change_frequency:
             if random.random() < 0.5:  # 50% chance to change direction

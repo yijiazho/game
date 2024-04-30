@@ -10,7 +10,7 @@ class Boss(Enemy):
         self.speed_y = 4
         self.health = 300
 
-    def move(self, screen_width, current_time):
+    def move(self, screen_width, screen_height, current_time):
         # Boss movement logic, moves faster and without random direction changes
         self.x += self.speed_x * self.direction_x
         self.y += self.speed_y * self.direction_y
@@ -18,7 +18,7 @@ class Boss(Enemy):
         # Boundary check, bounces off the edges
         if self.x <= 0 or self.x >= screen_width - self.width:
             self.direction_x *= -1
-        if self.y <= 0 or self.y >= screen_width - self.height:  # Assuming screen_width for simplicity
+        if self.y <= 0 or self.y >= screen_height - self.height:
             self.direction_y *= -1
 
     def fire(self, bullet_image):

@@ -76,7 +76,7 @@ class Game:
 
         # Update enemies
         for enemy in self.enemies:
-            enemy.move(self.screen.get_width(), current_time)
+            enemy.move(self.screen.get_width(), self.screen.get_height(), current_time)
 
         # Update bullets
         for bullet in self.bullets:
